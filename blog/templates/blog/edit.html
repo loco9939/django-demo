@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}
+<title>Post-edit</title>
+{% endblock title %} {% block main %}
+<h1>여기는 blog 수정 페이지 입니다.</h1>
+<form action={% url "blog:edit" id %} id="blog-write" method="post">
+  {% csrf_token %}
+  <input
+    type="text"
+    name="title"
+    placeholder="제목을 입력해주세요"
+    value="{{ title }}"
+  />
+  <input type="submit" />
+</form>
+<textarea placeholder="내용을 입력해주세요" name="content" form="blog-write">
+{{ content }}</textarea
+>
+{% endblock %}

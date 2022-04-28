@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>base</title>
+  </head>
+  <body>
+    {# 이게 주석입니다. #}
+    {% comment %} ㅁㄴㅇㄹㅁㄹ {% endcomment %}
+    <h1>base-html</h1>
+    {% for member in members %}
+    <h1>오늘의 멤버는: {{ member }}</h1>
+    {% endfor %} 
+    {% if members.1 == "hooni" %}
+    <p>후니</p>
+    {% elif members.1 == "janny" %}
+    <p>제니</p>
+    {% else %}
+    <p>Nope</p>
+    {% endif %}
+    <p>멋사팀 총 멤버수: {{ members|length }}</p>
+    <h2>오늘의 날씨는: {{ weather_data.weather }}</h2>
+    <h3>오늘의 온도는: {{ weather_data.temperature }}</h3>
+  </body>
+</html>
